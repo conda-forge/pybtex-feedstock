@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 0
+  number: 1000
   entry_points:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
