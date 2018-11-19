@@ -1,7 +1,7 @@
 {% set name = "pybtex" %}
-{% set version = "0.21" %}
+{% set version = "0.22.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "af8a6c7c74954ad305553b118d2757f68bc77c5dd5d5de2cc1fd16db90046000" %}
+{% set hash_value = "26b70ec9f941db330c198fe1f2743182e9d8c2afa0a4b8ccca695f11e079f966" %}
 
 package:
   name: '{{ name|lower }}'
@@ -18,21 +18,25 @@ build:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
     - pybtex-format = pybtex.database.format.__main__:main
-  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
+    - pyyaml >=3.01
+    - latexcodec >=1.0.4
+    - six
   run:
     - python
     - setuptools
     - pyyaml >=3.01
     - latexcodec >=1.0.4
+    - six
 
 test:
   imports:
-    - custom_fixers
     - pybtex
     - pybtex.backends
     - pybtex.bibtex
@@ -49,10 +53,6 @@ test:
     - pybtex.style.labels
     - pybtex.style.names
     - pybtex.style.sorting
-    - pybtex.tests
-    - pybtex.tests.bst_parser_test
-    - pybtex.tests.data
-    - pybtex.tests.database_test
   commands:
     - pybtex --help
     - pybtex-convert --help
