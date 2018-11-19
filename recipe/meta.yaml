@@ -18,17 +18,22 @@ build:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
     - pybtex-format = pybtex.database.format.__main__:main
-  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
+    - pyyaml >=3.01
+    - latexcodec >=1.0.4
+    - six
   run:
     - python
     - setuptools
     - pyyaml >=3.01
     - latexcodec >=1.0.4
+    - six
 
 test:
   imports:
