@@ -37,7 +37,6 @@ requirements:
 
 test:
   imports:
-    - custom_fixers
     - pybtex
     - pybtex.backends
     - pybtex.bibtex
@@ -54,10 +53,6 @@ test:
     - pybtex.style.labels
     - pybtex.style.names
     - pybtex.style.sorting
-    - pybtex.tests
-    - pybtex.tests.bst_parser_test
-    - pybtex.tests.data
-    - pybtex.tests.database_test
   commands:
     - pybtex --help
     - pybtex-convert --help
