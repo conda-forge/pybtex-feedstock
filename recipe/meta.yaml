@@ -1,7 +1,7 @@
 {% set name = "pybtex" %}
-{% set version = "0.22.0" %}
+{% set version = "0.22.1" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "26b70ec9f941db330c198fe1f2743182e9d8c2afa0a4b8ccca695f11e079f966" %}
+{% set hash_value = "bc6aaf8c5b56c9c5cfe34fd4171295c2b637193d2265b02c10db5608aec11aba" %}
 
 package:
   name: '{{ name|lower }}'
