@@ -1,7 +1,7 @@
 {% set name = "pybtex" %}
-{% set version = "0.22.0" %}
+{% set version = "0.22.2" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "26b70ec9f941db330c198fe1f2743182e9d8c2afa0a4b8ccca695f11e079f966" %}
+{% set hash_value = "00816e5f8570609d8ce3360cd23916bd3e50428a3508127578fdb4dc2b731c1c" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1000
+  number: 0
   entry_points:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
