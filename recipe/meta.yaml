@@ -1,22 +1,22 @@
 {% set name = "pybtex" %}
-{% set version = "0.22.2" %}
+{% set version = "0.23.0" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
+  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  'sha256': '00816e5f8570609d8ce3360cd23916bd3e50428a3508127578fdb4dc2b731c1c'
+  sha256: b92be18ccd5e9a37895949dcf359a1f6890246b73646dddf1129178ee12e4bef
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
     - pybtex-format = pybtex.database.format.__main__:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   host:
@@ -62,9 +62,7 @@ about:
   license_family: MIT
   license_file: COPYING
   summary: A BibTeX-compatible bibliography processor in Python
-  description: Pybtex reads citation information from a file and produces a formatted
-               bibliography. BibTeX style files are supported. Alternatively it is possible
-               to write styles in Python.
+  description: Pybtex reads citation information from a file and produces a formatted bibliography. BibTeX style files are supported. Alternatively it is possible to write styles in Python.
   doc_url: http://pythonhosted.org/pybtex/
   dev_url: https://bitbucket.org/pybtex-devs/pybtex/
 
