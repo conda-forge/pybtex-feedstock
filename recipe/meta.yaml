@@ -11,7 +11,7 @@ source:
   sha256: b92be18ccd5e9a37895949dcf359a1f6890246b73646dddf1129178ee12e4bef
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - pybtex = pybtex.__main__:main
     - pybtex-convert = pybtex.database.convert.__main__:main
