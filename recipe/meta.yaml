@@ -7,14 +7,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pybtex-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pybtex-{{ version }}.tar.gz
   sha256: 818eae35b61733e5c007c3fcd2cfb75ed1bc8b4173c1f70b56cc4c0802d34755
   patches:
     # This can be removed next release https://bitbucket.org/pybtex-devs/pybtex/pull-requests/37
     - backport_37.patch
 
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - pybtex = pybtex.__main__:main
@@ -25,9 +25,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
     - pyyaml >=3.01
     - latexcodec >=1.0.4
@@ -58,6 +58,7 @@ test:
     - pybtex-format --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pybtex.org/
