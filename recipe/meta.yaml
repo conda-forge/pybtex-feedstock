@@ -9,9 +9,6 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pybtex-{{ version }}.tar.gz
   sha256: 10684ffb05af33b041b06dabe15868078fd75847b24e1dffd8dd91348bbb3a4b
-  patches:
-    # This can be removed next release https://bitbucket.org/pybtex-devs/pybtex/pull-requests/37
-    - backport_37.patch
 
 build:
   number: 0
@@ -32,7 +29,7 @@ requirements:
     - setuptools
     - pyyaml >=3.01
     - latexcodec >=1.0.4
-    - six
+    - importlib_metadata
 
 test:
   imports:
