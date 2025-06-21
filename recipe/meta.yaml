@@ -29,7 +29,7 @@ requirements:
     - setuptools
     - pyyaml >=3.01
     - latexcodec >=1.0.4
-    - importlib_metadata
+    - importlib-metadata
 
 test:
   imports:
