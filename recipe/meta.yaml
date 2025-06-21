@@ -11,7 +11,7 @@ source:
   sha256: 10684ffb05af33b041b06dabe15868078fd75847b24e1dffd8dd91348bbb3a4b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pybtex = pybtex.__main__:main
