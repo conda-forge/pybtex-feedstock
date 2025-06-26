@@ -1,5 +1,5 @@
 {% set name = "pybtex" %}
-{% set version = "0.25.0" %}
+{% set version = "0.25.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pybtex-{{ version }}.tar.gz
-  sha256: 10684ffb05af33b041b06dabe15868078fd75847b24e1dffd8dd91348bbb3a4b
+  sha256: 9eaf90267c7e83e225af89fea65c370afbf65f458220d3946a9e3049e1eca491
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - pybtex = pybtex.__main__:main
