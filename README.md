@@ -9,11 +9,7 @@ Package license: MIT
 
 Summary: A BibTeX-compatible bibliography processor in Python
 
-Development: https://bitbucket.org/pybtex-devs/pybtex/
-
-Documentation: http://pythonhosted.org/pybtex/
-
-Pybtex reads citation information from a file and produces a formatted bibliography. BibTeX style files are supported. Alternatively it is possible to write styles in Python.
+Documentation: https://docs.pybtex.org/
 
 Current build status
 ====================
