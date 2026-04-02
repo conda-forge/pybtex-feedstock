@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  version: "0.26.0"
+
+package:
+  name: pybtex
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pybtex/pybtex-${{ version }}.tar.gz
+  sha256: 1daf1d769821770ecec85d6596e641a3e470cabf59a5366b5c530ffcdec064f9
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - pybtex = pybtex.__main__:main
+      - pybtex-convert = pybtex.database.convert.__main__:main
+      - pybtex-format = pybtex.database.format.__main__:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pyyaml >=3.01
+    - latexcodec >=1.0.4
+    - importlib-metadata
+
+tests:
+  - python:
+      imports:
+        - pybtex
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+    script:
+      - pybtex --help
+      - pybtex-convert --help
+      - pybtex-format --help
+
+about:
+  summary: A BibTeX-compatible bibliography processor in Python
+  license: MIT
+  license_file: COPYING
+  homepage: https://pybtex.org/
+  documentation: https://docs.pybtex.org/
+
+extra:
+  recipe-maintainers:
+    - croth1
+    - ocefpaf
