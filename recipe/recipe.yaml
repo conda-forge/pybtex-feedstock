@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.26.0"
+  version: "0.26.1"
 
 package:
   name: pybtex
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pybtex/pybtex-${{ version }}.tar.gz
-  sha256: 1daf1d769821770ecec85d6596e641a3e470cabf59a5366b5c530ffcdec064f9
+  sha256: 2e5543bea424e60e9e42eef70bff597be48649d8f68ba061a7a092b2477d5464
 
 build:
   number: 0
